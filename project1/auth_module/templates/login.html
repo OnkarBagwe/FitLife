@@ -1,0 +1,11 @@
+
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<h1>Login</h1>
+{% csrf_token %}
+{% crispy form %}
+<!-- {{ form | crispy }} -->
+{% endblock %}
