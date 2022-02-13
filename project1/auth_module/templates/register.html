@@ -7,7 +7,9 @@
 
 {% block content %}
 <h1>Register new account</h1>
-{% csrf_token %}
-{% crispy form %}
-<!-- {{ form | crispy }} -->
-{% endblock %}
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
+{% endblock %} 

@@ -19,5 +19,6 @@ from auth_module import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',views.register, name="register"),
-    path('home/', views.home, name="home")
+    path('home/', views.home, name="home"),
+    path('login/', views.login_user, name="login")
 ]
