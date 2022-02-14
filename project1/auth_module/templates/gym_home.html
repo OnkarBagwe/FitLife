@@ -1,0 +1,14 @@
+
+{% extends 'index.html' %}
+
+{% load static %}
+{% block content %}
+<h1>gym section</h1>
+ <p>Welcome, {{ user.username }}.</p> 
+
+ <h3> <a href="/plank"> Plank</a> </h3>
+ <h3> <a href="/bird_dog"> Bird Dog</a> </h3>
+
+ <a href="/home">home</a>
+
+{% endblock %}
