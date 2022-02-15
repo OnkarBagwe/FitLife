@@ -28,4 +28,5 @@ urlpatterns = [
 
     path('plank/', views.plank, name="plank"),
     path('bird_dog/', views.bird_dog_view, name="bird_dog"),
+    path('video_feed/', views.video_feed, name='video_feed')
 ]

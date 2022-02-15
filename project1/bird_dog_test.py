@@ -39,6 +39,7 @@ def calculate_angle(a,b,c):
 kill1=False
 killv=False
 kill2=False
+kill_q = False
 elbow_r = [0,0]
 wrist_r = [0,0]
 shoulder_r = [0,0]
@@ -112,7 +113,8 @@ def video_capture():
                                      )               
 
             image = cv2.resize(image, (1280, 720))  
-            cv2.imshow('Mediapipe Feed', image)
+            #image1 = image
+            #cv2.imshow('Mediapipe Feed', image)
 
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
@@ -146,8 +148,8 @@ def quadrupule():
             #print("hbs Heloo P")
             cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)
             
-        """if kill1==True:
-            break"""    
+        if kill_q==True:
+            break    
             
             
 def extend():
@@ -236,7 +238,7 @@ def execute():
             kill2=True
         sleep(1)"""
     #kill2 = True
-    for i in range(1,6):
+    """ for i in range(1,6):
         print("loop=", i)
         te1 = threading.Thread(target=extend)
         te1.start()
@@ -257,7 +259,18 @@ def execute():
             #kill1=True
             #kill2=True
             killv = True
-        sleep(1) 
+        sleep(1) """
+
+    for i in range(1,4):
+        tq1= threading.Thread(target=quadrupule)
+        tq1.start()
+        tq1.join()
+        sleep(1)
+        
+    kill_q = True
+
+
+    
 
 
 

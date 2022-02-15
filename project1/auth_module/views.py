@@ -14,6 +14,10 @@ from django.shortcuts import render,redirect
 from django.template import RequestContext
 from django.http import *
 from django.contrib.auth.models import User
+import cv2
+import bird_dog_test
+from django.http.response import StreamingHttpResponse
+from auth_module.camera import VideoCamera
 
 # Create your views here.
 class register_user_form_view(UpdateView):
@@ -98,7 +102,22 @@ def plank(request):
 
 def bird_dog_view(request):
     if request.user.is_authenticated:
-        bird_dog.execute()
+        #bird_dog_test.execute()
+        #cv2.imshow("Bird_Dog",bird_dog_test.image1)
         return render(request, 'bird_dog.html')
     else:
         return redirect('login_user')
+
+
+
+
+def gen(camera):
+	while True:
+		frame = camera.get_frame()
+		yield (b'--frame\r\n'
+				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+
+def video_feed(request):
+	return StreamingHttpResponse(gen(VideoCamera()),
+					content_type='multipart/x-mixed-replace; boundary=frame')
