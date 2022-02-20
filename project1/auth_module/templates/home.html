@@ -3,14 +3,20 @@
 
 {% load static %}
 
-
-
 {% block content %}
-<h1>bla bla home</h1>
+<body class="index-page sidebar-collapse">
+
+{% include "navbar.html" %}
+
+<div class="container">
+
  <p>Welcome, {{ user.username }}.</p> 
 
-<a href="/gym_home"> Gym Exercises</a><br>
- <a href="/yoga_home"> Yoga</a><br>
+ <a href="/gym_home"> Gym Exercises</a><br>
+  <a href="/yoga_home"> Yoga</a><br>
+ 
+  <a href="/logout_user" class="button btn-danger btn-round"> Logout </a>
+</div>
 
- <a href="/logout_user" class="button btn-danger btn-round"> Logout </a>
+
 {% endblock %}
