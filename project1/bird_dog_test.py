@@ -213,8 +213,7 @@ def extend():
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
             cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)"""
-
-        
+     
 def execute():    
     tq= threading.Thread(target=quadrupule)
     tvc=threading.Thread(target=video_capture)

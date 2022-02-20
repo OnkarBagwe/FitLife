@@ -1,5 +1,7 @@
 from cmath import log
+import time
 import bird_dog
+import threading
 from django.contrib import messages
 from django.shortcuts import redirect
 from distutils.log import Log
@@ -112,10 +114,37 @@ def bird_dog_view(request):
 
 
 def gen(camera):
-	while True:
-		frame = camera.get_frame()
-		yield (b'--frame\r\n'
-				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+	# while True:
+	# 	frame = camera.get_frame()
+	# 	yield (b'--frame\r\n'
+	# 			b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
+    # tq= threading.Thread(target=VideoCamera.quadrupule)
+    # tgf=threading.Thread(target=VideoCamera.get_frame)
+    # te=threading.Thread(target=VideoCamera.extend)
+  
+    for i in range(1,500):
+        frame= camera.get_frame()
+        yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+        
+
+    for i in range(1,500):
+        frame= VideoCamera.quadrupule()
+        yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+       
+
+    # # for i in range (1,20):
+    # #     print(i)
+    # #     if i==1:
+    # #         tgf.start()
+
+    # #     if i==15: 
+    # #         tq.start()
+    # #     time.sleep(1)
+
+    # # frame = camera.execute()
+    # # yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
 
 
 def video_feed(request):
