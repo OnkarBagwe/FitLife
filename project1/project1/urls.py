@@ -26,7 +26,10 @@ urlpatterns = [
     path('yoga_home/', views.yoga_home, name="yoga_home"),
     path('gym_home/', views.gym_home, name="gym_home"),
 
-    path('plank/', views.plank, name="plank"),
+    path('plank/', views.plank_view, name="plank"),
     path('bird_dog/', views.bird_dog_view, name="bird_dog"),
-    path('video_feed/', views.video_feed, name='video_feed')
+
+    path('urdhavahastasana/', views.urdhavahastasana_view, name="urdhavahastasana"),
+    path('veerbhadrasana/', views.veerbhadrasana_view, name="veerbhadrasana"),
+    # path('video_feed/', views.video_feed, name='video_feed')
 ]

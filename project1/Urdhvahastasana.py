@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 import pyttsx3
@@ -16,7 +16,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 mp_pose = mp.solutions.pose
 
 
-# In[ ]:
+# In[2]:
 
 
 def calculate_angle(a,b,c):
@@ -33,13 +33,12 @@ def calculate_angle(a,b,c):
     return angle 
 
 
-# In[ ]:
+# In[3]:
 
 
 kill1=False
-killv=False
 kill2=False
-kill_q = False
+killv=False
 elbow_r = [0,0]
 wrist_r = [0,0]
 shoulder_r = [0,0]
@@ -55,12 +54,9 @@ shoulder_l = [0,0]
 foot_r = [0,0]
 foot_l = [0,0]
 image = None
-image1 = None
-extend_rep = True
-#counter = 0
 
 def video_capture():
-    print("Hello")
+    #print("Hello")
     cap = cv2.VideoCapture(0)
     ## Setup mediapipe instance
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
@@ -100,6 +96,7 @@ def video_capture():
                 shoulder_l = [landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x,landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].y]
                 foot_r = [landmarks[mp_pose.PoseLandmark.RIGHT_FOOT_INDEX.value].x,landmarks[mp_pose.PoseLandmark.RIGHT_FOOT_INDEX.value].y]
                 foot_l = [landmarks[mp_pose.PoseLandmark.LEFT_FOOT_INDEX.value].x,landmarks[mp_pose.PoseLandmark.LEFT_FOOT_INDEX.value].y]
+#                 print("elbow in vedio func",elbow_r)
                 #handsBySide(self,elbow_r,shoulder_r,hip_r,elbow_l,shoulder_l,hip_l)
 
             except:
@@ -113,163 +110,158 @@ def video_capture():
                                      )               
 
             image = cv2.resize(image, (1280, 720))  
-            #image1 = image
-            #cv2.imshow('Mediapipe Feed', image)
+            cv2.imshow('Mediapipe Feed', image)
 
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
-            if killv ==True:
+        
+            if killv==True:
                 break
 
         cap.release()
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-        
-def quadrupule():
-    print("start exercise")
-    cv2.putText(image, 'Sit in a quadrupule position', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+
+def handsBySide():
+    #print("hand by side")
     temp=0
     while temp==0:
         image1=image
-        angle1 = calculate_angle(ankle_r, knee_r, hip_r)
-        #print()
-        angle2 = calculate_angle(knee_r,hip_r, shoulder_r)
-        angle3 = calculate_angle(shoulder_r, elbow_r, wrist_r)
-        angle4 = calculate_angle(hip_r,shoulder_r,elbow_r)
+        angle1 = calculate_angle(elbow_r, shoulder_r, hip_r)
+        #print("elbow in hand by side",elbow_r)
+        angle2 = calculate_angle(elbow_l,shoulder_l, hip_l)
         
-        if(angle1 > 90 or angle1 < 60 or angle2 >110 or angle2 < 90 or angle3 < 160 or angle4 > 90 or angle4 <60 ):
+        if(angle1 > 20 or angle2 > 20):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Not in proper quadrupule position', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Keep your hands by your side', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)
-            
-        if kill_q==True:
-            break    
-            
-            
-def extend():
-    #cv2.putText(image, 'Extend your left leg and your right arm', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' hands Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+
+
+def feetTogether():
+    #print("feet")
     temp=0
     while temp==0:
         image1=image
-        angle1 = calculate_angle(ankle_r, knee_r, hip_r)#90
-        #print()
-        angle2 = calculate_angle(knee_r,hip_r, shoulder_r)#90
-        angle3 = calculate_angle(shoulder_r, elbow_r, wrist_r) #180 
-        angle4 = calculate_angle(hip_r,shoulder_r,elbow_r)#180
-        angle5 = calculate_angle(ankle_l, knee_l, hip_l) #180
-        angle6 = calculate_angle(knee_l,hip_l, shoulder_l) #180
-        angle7 = calculate_angle(shoulder_l, elbow_l, wrist_l) #180 
-        angle8 = calculate_angle(hip_l,shoulder_l,elbow_l)#90
+        #print("kneer in feet",knee_r)
+        angle1 = calculate_angle(knee_r, hip_r, hip_l)
+        angle2 = calculate_angle(knee_l, hip_l, hip_r)
+
+        if((angle1> 95) or (angle2 > 95)):
+            #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
+            #print("ft Hello P")
+            cv2.putText(image1, 'Stand straight and keep your feet together', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+
+        else:
+            temp=1
+            #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
+            #print("ft Heloo P")
+            cv2.putText(image1, ' legs Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+
+def Urdhvahastasana():
+    temp=0
+    while temp==0:
+        image1=image
+        angle1= calculate_angle(wrist_l, elbow_l, shoulder_l)
+        angle2= calculate_angle(wrist_r, elbow_r, shoulder_r)
+        angle3= calculate_angle(elbow_l, shoulder_l, hip_l)
+        angle4= calculate_angle(elbow_r, shoulder_r, hip_r)
+        angle5 = calculate_angle(knee_r, hip_r, hip_l)
+        angle6 = calculate_angle(knee_l, hip_l, hip_r)
         
+        if angle1 < 170 or angle2<170:
+            #cv2.rectangle(image, (0,0), (200,50), (245,117,16), -1)
+            cv2.putText(image1,'Your arms should be straight', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+
+        if angle3 < 170 or angle4 < 170:
+            #cv2.rectangle(image, (250,0), (450,50), (245,117,16), -1)
+            cv2.putText(image1,'arms should be vertical and straight', (525,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+
+        if angle5 > 95 or angle6 > 95 :
+            #cv2.rectangle(image, (0,250), (200,300), (245,117,16), -1)
+            cv2.putText(image1,'legs should be straight', (525,275), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+
+        if(angle1>170 and angle2>170 and angle3>170 and angle4>170 and angle5<95 and angle6<95):
+            cv2.putText(image1,'Good Job', (450,100), cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,0), 1, cv2.LINE_AA)
         
-        
-        """if(angle1 > 100 or angle1 < 60 or angle2 >1300 or angle2 < 90 or angle7 < 165 or angle8 < 65 or angle8 >90 ):
+        if kill1==True:
+            break
+
+def tadasana():
+    #print("last ")
+    temp=0
+    while temp==0:
+        image1=image
+        angle1 = calculate_angle(elbow_r, shoulder_r, hip_r)
+        #print("elbow in hand by side",elbow_r)
+        angle2 = calculate_angle(elbow_l,shoulder_l, hip_l)
+        angle3 = calculate_angle(knee_r, hip_r, hip_l)
+        angle4 = calculate_angle(knee_l, hip_l, hip_r)
+
+        if(angle1 > 20 or angle2 > 20 or angle3> 95 or angle4 > 95):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            extend_rep = False
-            cv2.putText(image1, 'Not extended properly', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1,(255,255,255), 1, cv2.LINE_AA)"""
+            cv2.putText(image1, 'Keep your hands by your side, feet together, in tadasana ', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
-
-        if(angle3<160 or angle4<60 or angle5<160):
-            extend_rep=False
-            if(angle3<160) :
-                #extend_rep = False
-                cv2.putText(image1, 'Keep your right hand straight', (50,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
-
-            if(angle4<60) :
-                #extend_rep = False
-                cv2.putText(image1, 'Extend your right hand', (150,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
-
-            if(angle5<160):
-                #extend_rep = False
-                cv2.putText(image1, 'Keep your left leg straight', (150,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
-
-            """if(angle6<160) :
-                extend_rep = False
-                cv2.putText(image1, 'Extend your left leg', (250,225), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)"""
-
-            """if(extend_rep):
-                counter  = counter + 1
-                extend_rep = False
-                print(counter)
-                cv2.putText(image1, counter
-                            , (250,225), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)"""
         else:
-            extend_rep=True
-            """counter  = counter + 1
-            print("count=",counter)"""
-            temp=1
-            """cv2.putText(image1, counter
-                        , (250,225), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)"""
-        
-        """else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)"""
-     
-def execute():    
-    tq= threading.Thread(target=quadrupule)
+            cv2.putText(image1, ' aasan finish', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+        
+        if kill2==True:
+            break
+
+
+
+def execute():
+    thbs= threading.Thread(target=handsBySide)
+    tft=threading.Thread(target=feetTogether)
     tvc=threading.Thread(target=video_capture)
-    #te=threading.Thread(target=extend)
+    tu=threading.Thread(target=Urdhvahastasana)
+    tt=threading.Thread(target=tadasana)
 
-    for i in range (1,20):
-        #print(i)
+    for i in range (1,32):
+        print(i)
         if i==1:
             tvc.start()
-
-        if i==15: 
-            tq.start()
+        
+        if i==30: 
+            thbs.start()
         sleep(1)
 
-    tq.join()
-    #te.start()
+    thbs.join()
+    sleep(2)
+    tft.start()
+    tft.join()
+    sleep(2)
+    tu.start()
 
-    """for i in range(1,11):
+    for i in range(1,11):
+        print(i)
+        if i == 10:
+            kill1=True
+        sleep(1)
+
+    tu.join()
+    tt.start()
+    for i in range(1,11):
         print(i)
         if i == 10:
             kill2=True
-        sleep(1)"""
-    #kill2 = True
-    """ for i in range(1,6):
-        print("loop=", i)
-        te1 = threading.Thread(target=extend)
-        te1.start()
-        te1.join()
-        print("Extend thread start")
-        sleep(2)
-        tq1= threading.Thread(target=quadrupule)
-        tq1.start()
-        tq1.join()
-        print("quad thread start")
-        sleep(2)
-
-    #kill2 = True    
-
-    for i in range(1,4):
-        #print(i)
-        if i == 10:
-            #kill1=True
-            #kill2=True
-            killv = True
-        sleep(1) """
-
-    for i in range(1,4):
-        tq1= threading.Thread(target=quadrupule)
-        tq1.start()
-        tq1.join()
+            killv=True
         sleep(1)
-        
-    kill_q = True
+
+    #print("finally done")
 
 
-    
+# In[ ]:
+
 
 
 

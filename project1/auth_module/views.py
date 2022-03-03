@@ -1,6 +1,9 @@
 from cmath import log
 import time
 import bird_dog
+import plank
+import Urdhvahastasana
+import Veerbhadrasana
 import threading
 from django.contrib import messages
 from django.shortcuts import redirect
@@ -17,7 +20,6 @@ from django.template import RequestContext
 from django.http import *
 from django.contrib.auth.models import User
 import cv2
-import bird_dog_test
 from django.http.response import StreamingHttpResponse
 from auth_module.camera import VideoCamera
 
@@ -96,24 +98,40 @@ def yoga_home(request):
 
 # gym exercises
 
-def plank(request):
+def plank_view(request):
     if request.user.is_authenticated:
+        plank.execute()
         return render(request, 'plank.html')
     else:
         return redirect('login_user')
 
 def bird_dog_view(request):
     if request.user.is_authenticated:
-        #bird_dog_test.execute()
+        bird_dog.execute()
         #cv2.imshow("Bird_Dog",bird_dog_test.image1)
         return render(request, 'bird_dog.html')
     else:
         return redirect('login_user')
 
+def urdhavahastasana_view(request):
+    if request.user.is_authenticated:
+        Urdhvahastasana.execute()
+        #cv2.imshow("Bird_Dog",bird_dog_test.image1)
+        return render(request, 'urdhavahastasana.html')
+    else:
+        return redirect('login_user')
 
 
 
-def gen(camera):
+def veerbhadrasana_view(request):
+    if request.user.is_authenticated:
+        Veerbhadrasana.execute()
+        #cv2.imshow("Bird_Dog",bird_dog_test.image1)
+        return render(request, 'veerbhadrasana.html')
+    else:
+        return redirect('login_user')
+
+"""def gen(camera):
 	# while True:
 	# 	frame = camera.get_frame()
 	# 	yield (b'--frame\r\n'
@@ -149,4 +167,4 @@ def gen(camera):
 
 def video_feed(request):
 	return StreamingHttpResponse(gen(VideoCamera()),
-					content_type='multipart/x-mixed-replace; boundary=frame')
+					content_type='multipart/x-mixed-replace; boundary=frame')"""
