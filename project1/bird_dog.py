@@ -58,6 +58,7 @@ image1 = None
 extend_rep = True
 #counter = 0
 
+
 def video_capture():
     print("Hello")
     cap = cv2.VideoCapture(0)
@@ -65,6 +66,7 @@ def video_capture():
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while cap.isOpened():
             global image
+            global close
             ret, frame = cap.read()
 
             # Recolor image to RGB
@@ -112,19 +114,21 @@ def video_capture():
                                      )               
 
             image = cv2.resize(image, (1280, 720))  
-            cv2.imshow('Mediapipe Feed', image)
+            cv2.imshow('Mediapipe', image)
 
-            if cv2.waitKey(10) & 0xFF == ord('q'):
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                """close = True
+                print("Close is true")"""
                 break
             if killv ==True:
                 break
 
         cap.release()
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        """cv2.waitKey(0)
+        cv2.destroyWindow("Mediapipe")"""
         
 def quadrupule():
-    print("start exercise")
+    #print("start exercise")
     cv2.putText(image, 'Sit in a quadrupule position', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
     temp=0
     while temp==0:
