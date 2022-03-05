@@ -118,8 +118,8 @@ def video_capture():
                 break
 
         cap.release()
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        """cv2.waitKey(0)
+        cv2.destroyAllWindows()"""
 
 def plank():
     temp=0

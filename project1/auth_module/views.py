@@ -4,6 +4,7 @@ import bird_dog
 import plank
 import Urdhvahastasana
 import Veerbhadrasana
+import sys 
 import threading
 from django.contrib import messages
 from django.shortcuts import redirect
@@ -108,6 +109,8 @@ def plank_view(request):
 def bird_dog_view(request):
     if request.user.is_authenticated:
         bird_dog.execute()
+        """if(bird_dog.close == True):
+            sys.exit(bird_dog.execute())"""
         #cv2.imshow("Bird_Dog",bird_dog_test.image1)
         return render(request, 'bird_dog.html')
     else:
