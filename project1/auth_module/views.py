@@ -103,7 +103,7 @@ def yoga_home(request):
 def plank_view(request):
     if request.user.is_authenticated:
         plank.execute()
-        return render(request, 'plank.html')
+        return render(request, 'gym_home.html')
     else:
         return redirect('login_user')
 
@@ -113,7 +113,7 @@ def bird_dog_view(request):
         """if(bird_dog.close == True):
             sys.exit(bird_dog.execute())"""
         #cv2.imshow("Bird_Dog",bird_dog_test.image1)
-        return render(request, 'bird_dog.html')
+        return render(request, 'gym_home.html')
     else:
         return redirect('login_user')
 
@@ -121,7 +121,7 @@ def urdhavahastasana_view(request):
     if request.user.is_authenticated:
         Urdhvahastasana.execute()
         #cv2.imshow("Bird_Dog",bird_dog_test.image1)
-        return render(request, 'urdhavahastasana.html')
+        return render(request, 'yoga_home.html')
     else:
         return redirect('login_user')
 
@@ -131,7 +131,7 @@ def veerbhadrasana_view(request):
     if request.user.is_authenticated:
         Veerbhadrasana.execute()
         #cv2.imshow("Bird_Dog",bird_dog_test.image1)
-        return render(request, 'veerbhadrasana.html')
+        return render(request, 'yoga_home.html')
     else:
         return redirect('login_user')
 

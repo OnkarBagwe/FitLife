@@ -220,18 +220,19 @@ def tadasana():
 
 
 def execute():
+    global kill1,kill2,killv
     thbs= threading.Thread(target=handsBySide)
     tft=threading.Thread(target=feetTogether)
     tvc=threading.Thread(target=video_capture)
     tu=threading.Thread(target=Urdhvahastasana)
     tt=threading.Thread(target=tadasana)
 
-    for i in range (1,32):
+    for i in range (1,22):
         print(i)
         if i==1:
             tvc.start()
         
-        if i==30: 
+        if i==20: 
             thbs.start()
         sleep(1)
 

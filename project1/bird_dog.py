@@ -142,13 +142,13 @@ def quadrupule():
         if(angle1 > 90 or angle1 < 60 or angle2 >110 or angle2 < 90 or angle3 < 160 or angle4 > 90 or angle4 <60 ):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Not in proper quadrupule position', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Not in proper quadrupule position', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
             
         """if kill1==True:
             break"""    
@@ -182,15 +182,15 @@ def extend():
             extend_rep=False
             if(angle3<160) :
                 #extend_rep = False
-                cv2.putText(image1, 'Keep your right hand straight', (50,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+                cv2.putText(image1, 'Keep your right hand straight', (50,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
             if(angle4<60) :
                 #extend_rep = False
-                cv2.putText(image1, 'Extend your right hand', (150,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+                cv2.putText(image1, 'Extend your right hand', (150,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
             if(angle5<160):
                 #extend_rep = False
-                cv2.putText(image1, 'Keep your left leg straight', (150,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+                cv2.putText(image1, 'Keep your left leg straight', (150,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
             """if(angle6<160) :
                 extend_rep = False
@@ -217,7 +217,8 @@ def extend():
             cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)"""
 
         
-def execute():    
+def execute(): 
+    global killv   
     tq= threading.Thread(target=quadrupule)
     tvc=threading.Thread(target=video_capture)
     #te=threading.Thread(target=extend)
@@ -257,7 +258,7 @@ def execute():
 
     for i in range(1,4):
         #print(i)
-        if i == 10:
+        if i == 3:
             #kill1=True
             #kill2=True
             killv = True

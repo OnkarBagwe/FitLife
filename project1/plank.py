@@ -135,32 +135,33 @@ def plank():
         angle6 = calculate_angle(elbow_r, shoulder_r, hip_r)
         
         if(angle1 > 100 or angle1 < 60 or angle2 >100 or angle2 < 60):
-            cv2.putText(image1, 'Position your elbows directly beneath your shoulders.', (25,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Position your elbows directly beneath your shoulders.', (25,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
             
         if(angle3<155 or  angle4<155):
-            cv2.putText(image1, 'Keep your legs straight', (25,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Keep your legs straight', (25,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
         if (angle5>100 or angle5<60 or angle6>100 or angle6<60 ):
-            cv2.putText(image1, 'keep your body straight', (25,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (225,255,255), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'keep your body straight', (25,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
         if ((angle1<100 or angle1>60) and (angle2<100 or angle2>60) and angle3>155 and angle4>155 and (angle5<100 or angle5>60) and (angle6<100 or angle6>60)):
-            cv2.putText(image1, 'Parfact! Keep it up', (25,150), cv2.FONT_HERSHEY_SIMPLEX, 1, (225,255,255), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Perfect! Keep it up', (25,150), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
         if kill1==True:
-            temp=1;
+            temp=1
             break
 
 def execute():
+    global kill1,killv
 
     tvc=threading.Thread(target=video_capture)
     tp=threading.Thread(target=plank)
 
-    for i in range (1,32):
+    for i in range (1,22):
         print(i)
         if i==1:
             tvc.start()
         
-        if i==30: 
+        if i==20: 
             tp.start()
         sleep(1)
         

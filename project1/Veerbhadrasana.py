@@ -71,7 +71,7 @@ def video_capture():
     ## Setup mediapipe instance
     with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
         while cap.isOpened():
-            global image
+            global image,kill1,kill2,kill3,killv
             ret, frame = cap.read()
 
             # Recolor image to RGB
@@ -464,6 +464,7 @@ def tadasana():
 #t.video_capture()
 
 def execute():
+    global killv,kill1,kill2,kill3
     thbs= threading.Thread(target=handsBySide)
     tft=threading.Thread(target=feetTogether)
     tvc=threading.Thread(target=video_capture)
@@ -481,12 +482,12 @@ def execute():
     # tvc.start()
     # thbs.start()
 
-    for i in range (1,32):
+    for i in range (1,22):
         print(i)
         if i==1:
             tvc.start()
         
-        if i==30: 
+        if i==20: 
             thbs.start()
         sleep(1)
 
