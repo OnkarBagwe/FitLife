@@ -5,13 +5,108 @@
 {% block content %}
 
 {% include "navbar.html" %}
-<h1>gym section</h1>
 
- <p>Welcome, {{ user.username }}.</p> 
+ <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          <h2 id="coloredShadows">Gym Exercises</h2>
+          <h4>Before you start exercising you should keep some things in mind: 
+              <ul>
+                <li><i> SET REALISTIC GOALS: </i>It may take some time to get the results you want. It’s vital to break your ultimate goal down in to stages and set lots of smaller goals to keep you motivated along the way.
+                </li>
+                <li><i> BE CONSISTENT: </i>Results come through regular and consistent activity. Stick to your programme and avoid frequent stops and starts.
+                </li>
+                <li><i> TOO MUCH TOO SOON: </i>Do not increase the amount of exercise you do too soon. Increase what you’re doing by no more than 10% per week.
+                </li>
+                <li><i>ACCEPT FEELING OF DISCOMFORT: </i>When you first start exercising you’ll experience feelings of discomfort such as shortness of breath, sweating and aching muscles after exercising. Don’t worry, this is completely normal and everyone feels like this when they’re first starting out.
+                </li>
+                <li> <i>WARM UP:</i> Not warming up is a mistake many beginners make. Before any session ensure that you warm up thoroughly and mobilise the areas that you will be using during the workout. Furthermore, failure to warm up properly may increase the risk of injury.</li>
+                <li><i>TIME OF DAY: </i>We are all different. Some of us rise early and some of us go to bed late. Exercise at the time when you feel that you have most energy.</li>
+                <li><i>WILL POWER</i>Don’t give up. All beginners have set backs on the way to achieving their goals. Accept them and use them to re-motivate yourself.</li>
+                <li><i>WATER: </i>Ensure you drink plenty of water, before, during and after exercise, particularly if you are exercising in warm conditions or for long periods. Dehydration will result in a drop in performance and severe dehydration can be dangerous too.</li>
+              </ul>
+          </h4>
+         
+        </div>
+      </div>
+    </div>
+    <h2 id="coloredShadows pb-0 mb-0">Exercises</h2>
+    <div class="row">
+        
+      <div class="col-md-6 pt-0 mt-0">
+        <div class="card card-blog">
+            <div class="card-body pb-5">
+                <span class="card-category text-warning h3 ">PLANK</span>
+                <a href="/plank" class="btn btn-warning btn-round ml-5">
+                  <i class="material-icons">favorite</i> Start exercise
+                </a>
+              </div>
+          <div class="card-header card-header-image">
+            <a href="#pablo">
+              <img src="{% static './assets/img/fitlife_img/plank3.jpeg' %}" alt="">
+            </a>
+          </div>
+          <div class="card-body">
+            <h4 class="card-description">
+                The plank (also called a front hold, hover, or abdominal bridge) is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.
 
- <h3> <a href="/plank"> Plank</a> </h3>
- <h3> <a href="/bird_dog"> Bird Dog</a> </h3>
+                This exercise can be done by beginers as well as experts
 
- <a href="/home">home</a>
+            </h4>
+            <h4 class="card-description">
+                Holding a plank position can fire up all these muscle groups simultaneously giving us the following benefits :
+                <ul class="pl-3">
+                    <li>A Healthy Posture</li>
+                    <li>Balance and Coordination</li>
+                    <li>Improves Body Alignment and Helps Avoid Illness</li>
+                    <li>Build Core Strength</li>
+                    <li>Improves Flexibility</li>
+                    <li>Improves Metabolism</li>
+                    <li>Improves Overall Mental Health</li>
+                </ul>
+
+            </h4>
+            <a href="/plank" class="btn btn-warning btn-round ">
+                <i class="material-icons">favorite</i> Start exercise
+              </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-blog">
+            <div class="card-body pb-5">
+                <span class="card-category text-rose h3 ">BIRD DOG</span>
+                <a href="/bird_dog" class="btn btn-danger btn-round ml-5">
+                  <i class="material-icons">favorite</i> Start exercise
+                </a>
+              </div>
+          <div class="card-header card-header-image">
+            <a href="#pablo">
+              <img src="{% static './assets/img/fitlife_img/bird-dog2.jpeg' %}" alt="">
+            </a>
+          </div>
+          <div class="card-body">
+            <h4 class="card-description">
+                The bird dog is a simple core exercise that improves stability, encourages a neutral spine, and relieves low back pain. This exercise pose uses the whole body to target and strengthen your core, hips, and back muscles. It also helps promote proper posture and increase range of motion.
+            </h4>
+
+            <h4 class="card-description">
+                This exercise is suitable for people of all levels, including older adults, and it can be used to prevent injury, align your spine, and recover from low back pain.
+            </h4>
+
+            <h4 class="card-description">
+                The bird dog exercise works the erector spinae, rectus abdominis, and glutes. These muscles allow for correct movement, control, and stability of the whole body. It's an ideal exercise for people with low back concerns , including hypermobility, and it can help develop good balance and posture.
+            </h4>
+            <a href="/bird_dog" class="btn btn-danger btn-round">
+                <i class="material-icons">favorite</i> Start exercise
+              </a>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
 
 {% endblock %}

@@ -16468,3 +16468,14 @@ select.selectpicker {
 .register-bgimg{
  background-image: url('./assets/img/bg0.jpg');
 }
+
+.bg-defined{
+  background-color: #008394!important;
+}
+
+.login-body{
+  background-color: green!important;
+  background-image: url('../img/bg7.jpg'); 
+  background-size: cover;
+  background-position: top center;
+}

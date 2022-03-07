@@ -5,11 +5,111 @@
 
 
 {% block content %}
-<h1>yoga section</h1>
- <p>Welcome, {{ user.username }}.</p> 
 
- <h3> <a href="/urdhavahastasana"> Urdhavahastasana</a> </h3>
- <h3> <a href="/veerbhadrasana"> Veerbhadrasana</a> </h3> 
- <a href="/home">home</a>
+{% include "navbar.html" %}
+
+ <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="title">
+          <h2 id="coloredShadows">Yoga</h2>
+          <h4>Yoga's origins can be traced to northern India over 5,000 years ago. The word yoga was first mentioned in ancient sacred texts called the Rig Veda. The Vedas are a set of four ancient sacred texts written in Sanskrit. </h4>
+          <h4>If you’ve ever taken a yoga class (and if you haven't, you should!), you may have heard some words that you couldn't recognize. The language of yoga is actually Sanskrit, the root of many Indian languages and one of the oldest of in the world.</h4>
+          <h4><i>Āsana:</i>  
+            Literally translated as seat, the term āsana these days is used to refer to the practice of physical yoga postures or poses.</h4>
+        <h4><i>
+            Prānāyāma:
+            </i>Prāna in Sanskrit refers to the life force within every being. In relation to modern-day yoga classes, the term prānāyāma is used to describe breathing exercises, which clear the physical and emotional obstacles in our body to free the breath.</h4>
+
+        <h4>
+
+            When starting with yoga, there will be certain postures which become the foundation of your yoga practice. Anchoring your practice with these postures allows you to reap the benefits of yoga - flexibility, improved muscle strength, protection of the spine, increased blood flow, and even improved happiness.</h4>
+        </div>
+      </div>
+    </div>
+    <h2 id="coloredShadows">Exercises</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card card-blog">
+            <div class="card-body pb-5">
+                <span class="card-category text-warning h3 ">URDHVAHASTASANA</span>
+                <a href="/urdhvahastasana" class="btn btn-warning btn-round ml-5">
+                  <i class="material-icons">favorite</i> Start exercise
+                </a>
+              </div>
+          <div class="card-header card-header-image">
+            <a href="#pablo">
+             
+              <img src="{% static './assets/img/fitlife_img/urdhvahastasana1.jpeg' %}" alt="">
+            </a>
+          </div>
+          <div class="card-body">
+           <h4 class="card-description">
+            Urdhva Hastasana (Upward Salute) might seem like one of easiest poses in yoga at first glance, but it requires attention and focus. 
+           </h4>
+           <h4 class="card-description">As a belly-stretching pose, Upward Salute can help improve your digestion. It is also a great pose for stretching the shoulders and arms. The benefits of Urdhvahastasana include: </h4>
+           <h4 class="card-description">
+               <ul>
+                <li> It strengthens the legs and gives an excellent stretch to the whole body.</li>
+               <li>It improves the posture of the body and keeps the spine straight.</li> 
+                <li> It stimulates the digestive system and eases bowel movement.</li>
+                <li> It tones and massages the liver, kidneys, and pancreas.</li>
+               </ul>
+           </h4>
+  
+             
+           <a href="/urdhvahastasana" class="btn btn-warning btn-round">
+            <i class="material-icons">favorite</i> Start exercise
+          </a>  
+      
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card card-blog">
+            <div class="card-body pb-5">
+                <span class="card-category text-rose h3 ">VEERBHADRASANA 2</span>
+                <a href="/urdhvahastasana" class="btn btn-danger btn-round ml-5">
+                  <i class="material-icons">favorite</i> Start exercise
+                </a>
+              </div>
+          <div class="card-header card-header-image">
+            <a href="#pablo">
+              <img src="{% static './assets/img/fitlife_img/veerbhadrasana1.jpeg' %}" alt="">
+            </a>
+          </div>
+          <div class="card-body">
+           <h4 class="card-description">
+            The second pose in the series of three, Virabhadrasana II gives a nice stretch to your legs, shoulders, ankles and groins. "This is a great pose for balancing and stability. As you lock your knees, you lessen the blood flow toward the lower part of your body and increase it toward your upper body.
+           </h4>
+           <h4 class="card-description">
+               There are many benefits of veerbhadrasana 2 such as:
+               <ul>
+                <li>Stretches your hips, groins and shoulders.
+                </li>
+                <li>Opens your chest and lungs.
+                </li>
+                <li> Energizes tired limbs.
+                </li>
+                <li>Stimulates your abdominal organs.
+                </li>
+                <li>Develops balance and stability.
+                </li>
+                <li>Improves circulation and respiration.
+                </li>
+               </ul>
+           </h4>
+           <a href="/urdhvahastasana" class="btn btn-danger btn-round ">
+            <i class="material-icons">favorite</i> Start exercise
+          </a>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+
+
  
 {% endblock %}
