@@ -4,18 +4,112 @@
 {% load static %}
 
 {% block content %}
-<body class="index-page sidebar-collapse">
+<body class="index-page sidebar-collapse"  >
 
 {% include "navbar.html" %}
 
-<div class="container">
+<div class="container  header-filter" filter-color="green" style="background: url('static/assets/img/fitlife_img/login_img3.jpeg');   background-size: cover; background-position: top center;"  >
+  <div class="row">
+    <div class="col-md-12">
+      <div class="title">
+        <h2 id="coloredShadows">What is FitLife?</h2>
+        <h4>In a pandemic situation when everyone is supposed to stay in their house, exercise and yoga is one thing which everybody must do. But as there is no trainer to train them, people end up doing it wrong and end up gaining nothing from it. People are also prone to several injuries due to incorrect posture. </h4>
+        <h4>An Australian study on the causes of injuries at fitness facilities also indicates that overexertion, strenuous and unnatural movement causes over 36% of fitness injuries — the highest among the six common causes of injury.This explains the importance of correct posture while doing exercises and asanas.
+          </h4>
+        <h4>FitLife is an application which will tell you the proper posture of the exercise you are performing and monitor your posture throughout. The application tries to correct your posture by giving audio feedback so that you place your body properly and do your exercise perfectly.
+        </h4>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-blog">
+        <div class="card-body pb-5">
+          <span class="card-category text-warning h3 ">GYM EXERCISES </span>
+          <a href="/gym_home" class="btn btn-warning btn-round ml-5">
+            <i class="material-icons">favorite</i> Select exercise
+          </a>
+        </div>
+        <div class="card-header card-header-image">
+          <a href="/gym_home">
+           
+            <img width="400" height="400" src="{% static './assets/img/fitlife_img/home_gym2.jpeg' %}" alt="">
+          </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-description "> Gym exercises majorly consist of weight training, cardiovascular training and mobility training</h4>
 
- <p>Welcome, {{ user.username }}.</p> 
+          <h4 class="card-description "> Weight training is an organized exercise in which muscles of the body are forced to contract under tension using weights, body weight or other devices in order to stimulate growth, strength, power, and endurance.</h4>
 
- <a href="/gym_home"> Gym Exercises</a><br>
-  <a href="/yoga_home"> Yoga</a><br>
- 
-  <a href="/logout_user" class="button btn-danger btn-round"> Logout </a>
+          <h4 class="card-description">
+            Cardiovascular training is defined as any type of exercise that gets your heart rate up and keeps it up for a prolonged period of time. Your respiratory system will start working harder as you begin to breathe faster and more deeply.</h4>
+
+          <h4 class="card-description">
+          Mobility training combines mobility exercises that increase the range of movements and motions your body can perform. These include flexibility, but also balance, pliability and strength. The full combination is the best way to avoid injury. One great thing about mobility training is its diversity.
+          </h4>
+
+          <a href="/gym_home" class="btn btn-warning btn-round ml-6">
+            <i class="material-icons">favorite</i> Select exercise
+          </a>
+        </div>
+        <!-- <div class="card-body">
+          <h4 class="card-category text-warning">GYM EXERCISES</h4>
+          <h4 class="card-title">
+
+         
+          </h4>
+        </div> -->
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-blog">
+        <div class="card-body pb-5">
+          <span class="card-category text-rose h3 ">YOGASANAS</span>
+          <a href="/yoga_home" class="btn btn-danger btn-round ml-5">
+            <i class="material-icons">favorite</i> Select exercise
+          </a>
+        </div>
+        <div class="card-header card-header-image">
+          <a href="/yoga_home">
+            <img  width="400" height="400" src="{% static './assets/img/fitlife_img/home_yoga2.jpeg' %}" alt="">
+          </a>
+        </div>
+        <div class="card-body">
+         
+          
+          <h4 class="card-description">
+            Yoga is an ancient practice that may have originated in India. It involves movement, meditation, and breathing techniques to promote mental and physical well-being.
+          </h4>
+
+          <h4 class="card-description">
+            The overall philosophy of yoga is about connecting the mind, body, and spirit.
+            There are six branches of yoga. Each branch represents a different focus and set of characteristics.            
+          </h4>
+
+          <h4 class="card-description">
+            <ul class="pl-2">
+              <li>   Hatha yoga: This is the physical and mental branch that aims to prime the body and mind.</li>
+              <li>Raja yoga: This branch involves meditation and strict adherence to a series of disciplinary steps known as the eight limbs of yoga.</li>
+              <li>Karma yoga: This is a path of service that aims to create a future free from negativity and selfishness.</li>
+              <li>Bhakti yoga: This aims to establish the path of devotion, a positive way to channel emotions and cultivate acceptance and tolerance.</li>
+              <li>
+                Jnana yoga: This branch of yoga is about wisdom, the path of the scholar, and developing the intellect through study.</li>
+                <li>
+                  Tantra yoga: This is the pathway of ritual, ceremony, or consummation of a relationship.   
+                </li>
+            </ul>
+
+          </h4>
+          <a href="/yoga_home" class="btn btn-danger btn-round ">
+            <i class="material-icons">favorite</i> Select exercise
+          </a>
+
+        </div>
+      </div>
+    </div>
+   
+  </div>
 </div>
 
 

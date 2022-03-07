@@ -31,5 +31,6 @@ urlpatterns = [
 
     path('urdhavahastasana/', views.urdhavahastasana_view, name="urdhavahastasana"),
     path('veerbhadrasana/', views.veerbhadrasana_view, name="veerbhadrasana"),
+    path('temp/', views.temp_view, name="temp")
     # path('video_feed/', views.video_feed, name='video_feed')
 ]

@@ -4,6 +4,7 @@ import bird_dog
 import plank
 import Urdhvahastasana
 import Veerbhadrasana
+
 import sys 
 import threading
 from django.contrib import messages
@@ -133,6 +134,9 @@ def veerbhadrasana_view(request):
         return render(request, 'veerbhadrasana.html')
     else:
         return redirect('login_user')
+
+def temp_view(request):
+    return render(request, 'temp.html')
 
 """def gen(camera):
 	# while True:
