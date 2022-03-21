@@ -44,9 +44,9 @@ def register(request):
                 messages.error(request,'Email already exists')
             else:
                 form.save()
-                username = form.cleaned_data.get('username')
+                #username = form.cleaned_data.get('username')
                 messages.success(request, f'Your account has been created! You are now able to log in')
-                return redirect('home')
+                return redirect('login_user')
 
     else:
         form = register_user_form()
