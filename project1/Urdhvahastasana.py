@@ -134,13 +134,13 @@ def handsBySide():
         if(angle1 > 20 or angle2 > 20):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Keep your hands by your side', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Keep your hands by your side', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' hands Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' hands Perfect', (50,300), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
 
 def feetTogether():
@@ -155,13 +155,13 @@ def feetTogether():
         if((angle1> 95) or (angle2 > 95)):
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("ft Hello P")
-            cv2.putText(image1, 'Stand straight and keep your feet together', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Stand straight and keep your feet together', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("ft Heloo P")
-            cv2.putText(image1, ' legs Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' legs Perfect', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
 def Urdhvahastasana():
     temp=0
@@ -176,18 +176,18 @@ def Urdhvahastasana():
         
         if angle1 < 170 or angle2<170:
             #cv2.rectangle(image, (0,0), (200,50), (245,117,16), -1)
-            cv2.putText(image1,'Your arms should be straight', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Your arms should be straight', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle3 < 170 or angle4 < 170:
             #cv2.rectangle(image, (250,0), (450,50), (245,117,16), -1)
-            cv2.putText(image1,'arms should be vertical and straight', (525,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'arms should be vertical and straight', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle5 > 95 or angle6 > 95 :
             #cv2.rectangle(image, (0,250), (200,300), (245,117,16), -1)
-            cv2.putText(image1,'legs should be straight', (525,275), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'legs should be straight', (50,325), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if(angle1>170 and angle2>170 and angle3>170 and angle4>170 and angle5<95 and angle6<95):
-            cv2.putText(image1,'Good Job', (450,100), cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Good Job', (50,500), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
         if kill1==True:
             break
@@ -206,13 +206,13 @@ def tadasana():
         if(angle1 > 20 or angle2 > 20 or angle3> 95 or angle4 > 95):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Keep your hands by your side, feet together, in tadasana ', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Keep your hands by your side, feet together, in tadasana ', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' aasan finish', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' aasan finish', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
         if kill2==True:
             break

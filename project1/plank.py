@@ -135,16 +135,16 @@ def plank():
         angle6 = calculate_angle(elbow_r, shoulder_r, hip_r)
         
         if(angle1 > 100 or angle1 < 60 or angle2 >100 or angle2 < 60):
-            cv2.putText(image1, 'Position your elbows directly beneath your shoulders.', (25,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Position your elbows directly beneath your shoulders.', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
             
         if(angle3<155 or  angle4<155):
-            cv2.putText(image1, 'Keep your legs straight', (25,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Keep your legs straight', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if (angle5>100 or angle5<60 or angle6>100 or angle6<60 ):
-            cv2.putText(image1, 'keep your body straight', (25,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'keep your body straight', (50,325), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if ((angle1<100 or angle1>60) and (angle2<100 or angle2>60) and angle3>155 and angle4>155 and (angle5<100 or angle5>60) and (angle6<100 or angle6>60)):
-            cv2.putText(image1, 'Perfect! Keep it up', (25,150), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Perfect! Keep it up', (50,500), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
         if kill1==True:
             temp=1

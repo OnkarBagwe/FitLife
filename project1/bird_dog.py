@@ -68,7 +68,7 @@ def video_capture():
             global image
             global close
             ret, frame = cap.read()
-
+            
             # Recolor image to RGB
             image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             image = cv2.resize(image, (1280, 720))
@@ -129,7 +129,8 @@ def video_capture():
         
 def quadrupule():
     #print("start exercise")
-    cv2.putText(image, 'Sit in a quadrupule position', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+    #cv2.rectangle(image,(250,0),(450,50),(245,117,16),-1)
+    #cv2.putText(image, 'Sit in a quadrupule position', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 2, (0,0,0), 1, cv2.LINE_AA)
     temp=0
     while temp==0:
         image1=image
@@ -142,19 +143,20 @@ def quadrupule():
         if(angle1 > 90 or angle1 < 60 or angle2 >110 or angle2 < 90 or angle3 < 160 or angle4 > 90 or angle4 <60 ):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Not in proper quadrupule position', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            #cv2.rectangle(image,(45,0),(1000,50),(255,255,255),-1)
+            cv2.putText(image1, 'Not in proper quadrupule position', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, 'Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Perfect', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,255,0), 1, cv2.LINE_AA)
             
         """if kill1==True:
             break"""    
             
             
-def extend():
+def extend1():
     #cv2.putText(image, 'Extend your left leg and your right arm', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
     temp=0
     while temp==0:
@@ -174,38 +176,82 @@ def extend():
         """if(angle1 > 100 or angle1 < 60 or angle2 >1300 or angle2 < 90 or angle7 < 165 or angle8 < 65 or angle8 >90 ):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            extend_rep = False
-            cv2.putText(image1, 'Not extended properly', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1,(255,255,255), 1, cv2.LINE_AA)"""
-
-
-        if(angle3<160 or angle4<60 or angle5<160):
-            extend_rep=False
+            
+            cv2.putText(image1, 'Not extended properly', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,0,0), 1, cv2.LINE_AA)"""
+        
+        if(angle3<160 or angle4<160 or angle5<160):
+            
+            cv2.putText(image1, str(i), (1150,100), cv2.FONT_HERSHEY_TRIPLEX, 3, (0,0,0), 2, cv2.LINE_AA)
+            
             if(angle3<160) :
-                #extend_rep = False
-                cv2.putText(image1, 'Keep your right hand straight', (50,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
-            if(angle4<60) :
-                #extend_rep = False
-                cv2.putText(image1, 'Extend your right hand', (150,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+                cv2.putText(image1, 'Keep your right hand straight', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
+
+
+            if(angle4<160 ) :
+
+                cv2.putText(image1, 'Extend your right hand', (50,225), cv2.FONT_HERSHEY_TRIPLEX,1.5, (0,0,0), 1, cv2.LINE_AA)
 
             if(angle5<160):
-                #extend_rep = False
-                cv2.putText(image1, 'Keep your left leg straight', (150,125), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
 
-            """if(angle6<160) :
-                extend_rep = False
-                cv2.putText(image1, 'Extend your left leg', (250,225), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)"""
+                cv2.putText(image1, 'Keep your left leg straight', (50,425), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
-            """if(extend_rep):
-                counter  = counter + 1
-                extend_rep = False
-                print(counter)
-                cv2.putText(image1, counter
-                            , (250,225), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)"""
+
         else:
-            extend_rep=True
-            """counter  = counter + 1
-            print("count=",counter)"""
+            
+            temp=1
+            """cv2.putText(image1, counter
+                        , (250,225), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)"""
+        
+        """else:
+            temp=1
+            #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
+            #print("hbs Heloo P")
+            cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)"""
+
+def extend2():
+    #cv2.putText(image, 'Extend your left leg and your right arm', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)
+    temp=0
+    while temp==0:
+        image1=image
+        angle1 = calculate_angle(ankle_r, knee_r, hip_r)#90
+        #print()
+        angle2 = calculate_angle(knee_r,hip_r, shoulder_r)#90
+        angle3 = calculate_angle(shoulder_l, elbow_l, wrist_l) #180 
+        angle4 = calculate_angle(hip_l,shoulder_l,elbow_l)#180
+        angle5 = calculate_angle(ankle_r, knee_r, hip_r) #180
+        angle6 = calculate_angle(knee_l,hip_l, shoulder_l) #180
+        angle7 = calculate_angle(shoulder_l, elbow_l, wrist_l) #180 
+        angle8 = calculate_angle(hip_l,shoulder_l,elbow_l)#90
+        
+        
+        
+        """if(angle1 > 100 or angle1 < 60 or angle2 >1300 or angle2 < 90 or angle7 < 165 or angle8 < 65 or angle8 >90 ):
+            #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
+            #print(" hbs Hello P")
+            
+            cv2.putText(image1, 'Not extended properly', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,0,0), 1, cv2.LINE_AA)"""
+        
+        if(angle3<160 or angle4<160 or angle5<160):
+            
+            cv2.putText(image1, str(j), (1150,100), cv2.FONT_HERSHEY_TRIPLEX, 3, (0,0,0), 2, cv2.LINE_AA)
+            
+            if(angle3<160) :
+
+                cv2.putText(image1, 'Keep your left hand straight', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
+
+
+            if(angle4<160 ) :
+
+                cv2.putText(image1, 'Extend your left hand', (50,225), cv2.FONT_HERSHEY_TRIPLEX,1.5, (0,0,0), 1, cv2.LINE_AA)
+
+            if(angle5<160):
+
+                cv2.putText(image1, 'Keep your right leg straight', (50,425), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
+
+
+        else:
+            
             temp=1
             """cv2.putText(image1, counter
                         , (250,225), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 1, cv2.LINE_AA)"""
@@ -217,12 +263,13 @@ def extend():
             cv2.putText(image1, ' Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (120,120,120), 1, cv2.LINE_AA)"""
 
         
+        
 def execute(): 
-    global killv   
+    global killv,i,j   
     tq= threading.Thread(target=quadrupule)
     tvc=threading.Thread(target=video_capture)
     #te=threading.Thread(target=extend)
-
+    
     for i in range (1,20):
         #print(i)
         if i==1:
@@ -241,9 +288,9 @@ def execute():
             kill2=True
         sleep(1)"""
     #kill2 = True
-    for i in range(1,6):
+    for i in range(1,3):
         print("loop=", i)
-        te1 = threading.Thread(target=extend)
+        te1 = threading.Thread(target=extend1)
         te1.start()
         te1.join()
         print("Extend thread start")
@@ -251,6 +298,21 @@ def execute():
         tq1= threading.Thread(target=quadrupule)
         tq1.start()
         tq1.join()
+        #cv2.putText(image, str(i), (250,50), cv2.FONT_HERSHEY_TRIPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
+        print("quad thread start")
+        sleep(2)
+        
+    
+    for j in range(1,3):
+        print("loop=", i)
+        te2 = threading.Thread(target=extend2)
+        te2.start()
+        te2.join()
+        print("Extend thread start")
+        sleep(2)
+        tq2= threading.Thread(target=quadrupule)
+        tq2.start()
+        tq2.join()
         print("quad thread start")
         sleep(2)
 
@@ -263,6 +325,5 @@ def execute():
             #kill2=True
             killv = True
         sleep(1) 
-
 
 

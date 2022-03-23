@@ -146,13 +146,13 @@ def handsBySide():
         if(angle1 > 20 or angle2 > 20):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Keep your hands by your side', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Keep your hands by your side', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' hands Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' hands Perfect', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
 
 def feetTogether():
@@ -167,13 +167,13 @@ def feetTogether():
         if((angle1> 95) or (angle2 > 95)):
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("ft Hello P")
-            cv2.putText(image1, 'Stand straight and keep your feet together', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Stand straight and keep your feet together', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("ft Heloo P")
-            cv2.putText(image1, ' legs Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' legs Perfect', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
 def spreadFeet():
     #print("spread feet")
@@ -187,13 +187,13 @@ def spreadFeet():
         if((angle1<100 or angle1>125) or (angle2<100 or angle2 > 125)):
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("sf Hello P")
-            cv2.putText(image1, 'Spread your feet to a disctance of 4 to 4.5 feet', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Spread your legs by 4-4.5 feet', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("sf Heloo P")
-            cv2.putText(image1, 'spread legs Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'spread legs Perfect', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
 def handsParallelToGround():
     #print("hand parallel to ground")
@@ -210,13 +210,13 @@ def handsParallelToGround():
         if(angle1 < 170 or angle2 <170 or angle3 < 170 or angle4 < 170):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Keep your hands straight and parallel to ground', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Hands straight and parallel to ground', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' hands Perfect in hptg', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Hands Perfect', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
 
 def BendLegRight():
@@ -231,13 +231,13 @@ def BendLegRight():
         if(angle1 > 125 or angle2 <170):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" BLR Hello ")
-            cv2.putText(image1, 'Bend Right leg 90 degree and keep left leg straight', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Bend Right leg 90 degree & left leg straight', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("BLR hello done")
-            cv2.putText(image1, ' Perfect Bend', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Perfect Bend', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
             
 
 def RightAnkle():
@@ -251,13 +251,13 @@ def RightAnkle():
         if(angle1 < 95):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" RA Hello ")
-            cv2.putText(image1, 'Knee is overshooting', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Knee is overshooting', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("RA hello done")
-            cv2.putText(image1, ' Perfect angle', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Perfect angle', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
 
 def VeerBhadhrasanaRight():
@@ -287,22 +287,22 @@ def VeerBhadhrasanaRight():
                 
         if angle1 < 170:
             #cv2.rectangle(image, (0,0), (200,50), (245,117,16), -1)
-            cv2.putText(image1,'Your right arm should be straight', (25,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Your right arm should be straight', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle2 < 170:
             #cv2.rectangle(image, (250,0), (450,50), (245,117,16), -1)
-            cv2.putText(image1,'Your left arm should be straight', (600,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Your left arm should be straight', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle3 >= 125 :
             #cv2.rectangle(image, (0,250), (200,300), (245,117,16), -1)
-            cv2.putText(image1,'You should bend more', (600,275), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'You should bend more', (50,325), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle4 < 170:
             #cv2.rectangle(image, (250,0), (450,50), (245,117,16), -1)
-            cv2.putText(image1,'Your left leg should be straight', (25,275), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Your left leg should be straight', (50,475), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if(angle1>170 and angle2>170 and angle3>=125 and angle4>170):
-            cv2.putText(image1,'Good Job', (450,100), cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Good Job', (50,575), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
         if kill1==True:
             break
@@ -319,13 +319,13 @@ def spreadFeet2nd():
         if((angle1<100 or angle1>125) or (angle2<100 or angle2 > 125)):
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("sf Hello P")
-            cv2.putText(image1, 'please stand with feet spread apart', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'please stand with feet spread apart', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("sf Heloo P")
-            cv2.putText(image1, 'spread legs Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'spread legs Perfect', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
 def BendLegLeft():
     #print("Bend Left leg 90 degree and keep Right leg straight")
@@ -339,13 +339,13 @@ def BendLegLeft():
         if(angle2 > 125 or angle1 <170):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" BLR Hello ")
-            cv2.putText(image1, 'Bend Left leg 90 degree and keep Right leg straight', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Bend Left leg 90 degree & Right leg straight', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("BLR hello done")
-            cv2.putText(image1, ' Perfect Bend', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' Perfect Bend', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
             
 
 def LeftAnkle():
@@ -359,13 +359,13 @@ def LeftAnkle():
         if(angle1 < 95):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" RA Hello ")
-            cv2.putText(image1, 'Knee is overshooting', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Knee is overshooting', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("RA hello done")
-            cv2.putText(image1, ' Perfect angle', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' Perfect angle', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
 
 def VeerBhadhrasanaLeft():
@@ -395,22 +395,22 @@ def VeerBhadhrasanaLeft():
                 
         if angle1 < 170:
             #cv2.rectangle(image, (0,0), (200,50), (245,117,16), -1)
-            cv2.putText(image1,'Your right arm should be straight', (25,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Your right arm should be straight', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle2 < 170:
             #cv2.rectangle(image, (250,0), (450,50), (245,117,16), -1)
-            cv2.putText(image1,'Your left arm should be straight', (600,25), cv2.FONT_HERSHEY_SIMPLEX,1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Your left arm should be straight', (50,175), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle4 >= 125 :
             #cv2.rectangle(image, (0,250), (200,300), (245,117,16), -1)
-            cv2.putText(image1,'You should bend more', (25,275), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'You should bend more', (50,300), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if angle3 < 170:
             #cv2.rectangle(image, (250,0), (450,50), (245,117,16), -1)
-            cv2.putText(image1,'Your left leg should be straight', (600,275), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Your left leg should be straight', (50,425), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         if(angle1>170 and angle2>170 and angle4>=125 and angle3>170):
-            cv2.putText(image1,'Good Job', (450,100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1,'Good Job', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
         if kill2==True:
             break
@@ -427,13 +427,13 @@ def spreadFeet3rd():
         if((angle1<100 or angle1>125) or (angle2<100 or angle2 > 125)):
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("sf Hello P")
-            cv2.putText(image1, 'please stand with feet spread apart', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'please stand with feet spread apart', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (500,0), (750,50), (245,117,16), -1)
             #print("sf Heloo P")
-            cv2.putText(image1, 'spread legs Perfect', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'spread legs Perfect', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
 def tadasana():
     #print("last ")
@@ -449,13 +449,13 @@ def tadasana():
         if(angle1 > 20 or angle2 > 20 or angle3> 95 or angle4 > 95):
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print(" hbs Hello P")
-            cv2.putText(image1, 'Keep your hands by your side, feet together, in tadasana ', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, 'Stand in tadasana ', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
             #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
             #print("hbs Heloo P")
-            cv2.putText(image1, ' aasan finish', (50,25), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,0), 1, cv2.LINE_AA)
+            cv2.putText(image1, ' aasan finish', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
         
         if kill3==True:
             break
