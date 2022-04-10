@@ -2,6 +2,8 @@ from cmath import log
 import time
 import bird_dog
 import plank
+import Lunges
+import TreePose
 import Urdhvahastasana
 import Veerbhadrasana
 
@@ -175,3 +177,21 @@ def temp_view(request):
 def video_feed(request):
 	return StreamingHttpResponse(gen(VideoCamera()),
 					content_type='multipart/x-mixed-replace; boundary=frame')"""
+
+
+def lunges_view(request):
+    if request.user.is_authenticated:
+        Lunges.execute()
+        return render(request, 'gym_home.html')
+    else:
+        return redirect('login_user')
+
+
+
+def treepose_view(request):
+    if request.user.is_authenticated:
+        TreePose.execute()
+        #cv2.imshow("Bird_Dog",bird_dog_test.image1)
+        return render(request, 'yoga_home.html')
+    else:
+        return redirect('login_user')

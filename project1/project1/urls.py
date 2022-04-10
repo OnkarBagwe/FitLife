@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from auth_module import views
+#from project1.auth_module.views import lunges_view, treepose_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',views.register, name="register"),
@@ -31,6 +32,8 @@ urlpatterns = [
 
     path('urdhavahastasana/', views.urdhavahastasana_view, name="urdhavahastasana"),
     path('veerbhadrasana/', views.veerbhadrasana_view, name="veerbhadrasana"),
-    path('temp/', views.temp_view, name="temp")
+    path('temp/', views.temp_view, name="temp"),
+    path('treepose/', views.treepose_view , name="treepose"),
+    path('lunges/', views.lunges_view, name="lunges")
     # path('video_feed/', views.video_feed, name='video_feed')
 ]

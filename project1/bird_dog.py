@@ -128,32 +128,22 @@ def video_capture():
         cv2.destroyWindow("Mediapipe")"""
         
 def quadrupule():
-    #print("start exercise")
-    #cv2.rectangle(image,(250,0),(450,50),(245,117,16),-1)
-    #cv2.putText(image, 'Sit in a quadrupule position', (50,25), cv2.FONT_HERSHEY_TRIPLEX, 2, (0,0,0), 1, cv2.LINE_AA)
     temp=0
     while temp==0:
         image1=image
         angle1 = calculate_angle(ankle_r, knee_r, hip_r)
-        #print()
         angle2 = calculate_angle(knee_r,hip_r, shoulder_r)
         angle3 = calculate_angle(shoulder_r, elbow_r, wrist_r)
         angle4 = calculate_angle(hip_r,shoulder_r,elbow_r)
         
         if(angle1 > 90 or angle1 < 60 or angle2 >110 or angle2 < 90 or angle3 < 160 or angle4 > 90 or angle4 <60 ):
-            #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
-            #print(" hbs Hello P")
-            #cv2.rectangle(image,(45,0),(1000,50),(255,255,255),-1)
             cv2.putText(image1, 'Not in proper quadrupule position', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,0,0), 1, cv2.LINE_AA)
 
         else:
             temp=1
-            #cv2.rectangle(image1, (0,0), (250,50), (245,117,16), -1)
-            #print("hbs Heloo P")
             cv2.putText(image1, 'Perfect', (50,50), cv2.FONT_HERSHEY_TRIPLEX, 1.5, (0,255,0), 1, cv2.LINE_AA)
             
-        """if kill1==True:
-            break"""    
+
             
             
 def extend1():
